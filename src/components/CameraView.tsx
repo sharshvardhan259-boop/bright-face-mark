@@ -69,14 +69,15 @@ const CameraView = ({ onCapture, showCapture = true }: CameraViewProps) => {
 
   return (
     <Card className="overflow-hidden shadow-medium">
-      <div className="relative bg-muted aspect-video flex items-center justify-center">
+      <div className="relative bg-muted aspect-video flex items-center justify-center min-h-[360px]">
         {isActive ? (
           <>
             <video
               ref={videoRef}
               autoPlay
               playsInline
-              className="w-full h-full object-cover"
+              muted
+              className="absolute inset-0 w-full h-full object-cover"
             />
             <canvas ref={canvasRef} className="hidden" />
           </>
